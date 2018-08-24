@@ -5,6 +5,7 @@ using PrismPopupSample.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.DryIoc;
+using Prism.Plugin.Popups;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PrismPopupSample
@@ -31,6 +32,10 @@ namespace PrismPopupSample
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
+
+            // This updates INavigationService and registers PopupNavigation.Instance
+            containerRegistry.RegisterPopupNavigationService();
+            containerRegistry.RegisterForNavigation<PopupSamplePage>();
         }
     }
 }

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PrismPopupSample.Views.PopupSamplePage">
+    <!--<StackLayout HorizontalOptions="Center" 
+                VerticalOptions="Center"
+                MinimumWidthRequest="300"
+                MinimumHeightRequest="300"
+                BackgroundColor="White">
+        <Label Text="{Binding Message}" />
+        <Button Text="Navigate Back" Command="{Binding NavigateBackCommand}" />
+    </StackLayout>-->
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="{Binding Message}" FontAttributes="Bold,Italic" TextColor="White" FontSize="Large" HorizontalOptions="Center" />
+        <ActivityIndicator Color="GreenYellow"  IsRunning="true" />
+        <Button Text="Close" Command="{Binding NavigateBackCommand}" />
+    </StackLayout>
+</popup:PopupPage>

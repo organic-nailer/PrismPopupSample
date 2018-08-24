@@ -23,24 +23,24 @@ namespace PrismPopupSample.ViewModels
             NavigationService = navigationService;
         }
 
-        public virtual void OnNavigatedFrom(NavigationParameters parameters)
-        {
-
-        }
-
-        public virtual void OnNavigatedTo(NavigationParameters parameters)
-        {
-
-        }
-
-        public virtual void OnNavigatingTo(NavigationParameters parameters)
-        {
-
-        }
-
         public virtual void Destroy()
         {
 
+        }
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnNavigatingTo(INavigationParameters parameters)
+        {
+            throw new NotImplementedException();
         }
     }
 }

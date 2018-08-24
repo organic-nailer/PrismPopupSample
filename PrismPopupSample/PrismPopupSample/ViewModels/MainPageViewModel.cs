@@ -8,12 +8,25 @@ using System.Text;
 
 namespace PrismPopupSample.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public class MainPageViewModel : BindableBase, INavigatingAware
     {
+        private INavigationService _navigationService { get; }
+
+        public DelegateCommand LaunchPopupCommand { get; }
+
         public MainPageViewModel(INavigationService navigationService)
-            : base(navigationService)
         {
-            Title = "Main Page";
+            _navigationService = navigationService;
+
+            LaunchPopupCommand = new DelegateCommand(OnLaunchPopupCommandExecuted);
+        }
+        
+        private async void OnLaunchPopupCommandExecuted() =>
+            await _navigationService.NavigateAsync("MainPage/PopupSamplePage");
+
+        public void OnNavigatingTo(INavigationParameters parameters)
+        {
+
         }
     }
 }
